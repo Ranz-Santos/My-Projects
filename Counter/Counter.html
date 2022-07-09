@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>      
+</head>
+<body>
+    <div class="container pt-5">
+    <center>
+        <h1 style="color: green;"><b>Counter</b></h1><br>
+
+        <h1 id="counting" style="color: rgb(255, 166, 0);"><b>0</b></h1><br>
+        <!--
+        <button class="btn btn-primary" onclick="incre_reset_decre('incre')">Increase</button>
+        <button class="btn btn-warning" onclick="incre_reset_decre('reset')">Reset</button>
+        <button class="btn btn-danger" onclick="incre_reset_decre('decre')">Decrease</button>
+        -->
+        <button class="btn btn-primary" id="btn1">Increase</button>
+        <button class="btn btn-warning" id="btn3">Reset   </button>
+        <button class="btn btn-danger"  id="btn2">Decrease</button>
+    </center>
+    </div>
+    <script>
+        //var data = 0;
+        var count = 0;
+            document.getElementById("counting").innerText = count;
+
+            $(document).ready(function(){
+            $("#btn1").click(function(){
+            
+                count += 1;
+                document.getElementById("counting").innerText = count;
+                
+            });
+            $("#btn2").click(function(){
+                
+            if(count>0)
+                count = count - 1;
+                document.getElementById("counting").innerText = count;
+            });
+            $("#btn3").click(function(){
+                
+                count = 0;
+                document.getElementById("counting").innerText = count;
+            });
+            });
+
+            /*function incre_reset_decre(action){
+                if(action === "incre"){
+                    data += 1;
+                    document.getElementById("counting").innerText = data;
+
+                }else if(action === "decre"){
+                    if(data>0){
+                    data = data - 1;
+                    }else {data = 0}
+                    document.getElementById("counting").innerText = data;
+                    
+                }else if(action === "reset"){
+                    data = 0;
+                    document.getElementById("counting").innerText = data;
+                }
+            }*/
+            
+            /*function increment(){
+                data += 1;
+                document.getElementById("counting").innerText = data;
+            }
+            function decrement(){
+                if(data>0){
+                    data = data - 1;
+                }else {data = 0}
+                 
+                document.getElementById("counting").innerText = data;
+            }
+
+            function reset(){
+                data = 0;
+                document.getElementById("counting").innerText = data;
+            }*/
+            
+        
+    </script>
+</body>
+</html>
